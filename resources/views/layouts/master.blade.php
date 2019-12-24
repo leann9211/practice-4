@@ -21,221 +21,178 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
+
 <div class="wrapper">
 
-  {{--  Navbar  --}}
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    {{--  Navbar  --}}
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
-    {{--   Left navbar links  --}}
-    <ul class="navbar-nav">
+        {{--   Left navbar links  --}}
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link btn btn-primary" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
 
-      <li class="nav-item">
-        <a class="nav-link btn btn-primary" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-      </li>
+        {{--  SEARCH FORM  --}}
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
 
-      {{--  <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
 
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>  --}}
-    </ul>
 
-    {{--  SEARCH FORM  --}}
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </nav>
-  {{--  /.navbar  --}}
+    {{--  Main Sidebar Container  --}}
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        {{--  Brand Logo  --}}
+        <a href="#" class="brand-link">
+        <img src="{{ URL::to('uploads') }}/logo.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:38px; height:35px; background: #fff;">
 
-  {{--  Main Sidebar Container  --}}
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <img src="{{ URL::to('uploads') }}/logo.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:38px; height:35px; background: #fff;">
+        <span class="brand-text font-weight-light">DsJewelry</span>
+        </a>
 
-      <span class="brand-text font-weight-light">DsJewelry</span>
-    </a>
+        {{--  Sidebar  --}}
+        <div class="sidebar">
+            {{--  Sidebar user panel (optional)  --}}
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="{{ URL::to('uploads') }}/david.jpg" class="img-circle elevation-3" alt="User Image"  style="opacity: .8; width:38px; height:35px;">
+                </div>
 
-    {{--  Sidebar  --}}
-    <div class="sidebar">
-        {{--  Sidebar user panel (optional)  --}}
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{{ URL::to('uploads') }}/david.jpg" class="img-circle elevation-3" alt="User Image"  style="opacity: .8; width:38px; height:35px;">
+                <div class="info">
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                </div>
             </div>
 
-            <div class="info">
-                <a href="#" class="d-block">David Renido</a>
-            </div>
-        </div>
+            {{--  Sidebar Menu  --}}
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-      {{--  Sidebar Menu  --}}
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                {{--  Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library  --}}
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    {{--  DASHBOARD  --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Starter Pages
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
 
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Active Page</p>
-                            </a>
-                        </li>
+                        <p>Dashboard</p>
+                        </a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Inactive Page</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    {{--  PRODUCT  --}}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-boxes"></i>
+                            <p>
+                                Product
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        {{--  SUB MENU  --}}
+                        <ul class="nav nav-treeview">
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Simple Link
-                        <span class="right badge badge-danger">New</span>
-                    </p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-      {{--  /.sidebar-menu  --}}
-    </div>
-    {{--  /.sidebar  --}}
+                            {{--  CATEGORY  --}}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-list-alt nav-icon"></i>
+                                    <p>Category</p>
+                                </a>
+                            </li>
+
+                            {{--  GEMSTONE  --}}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa-gem nav-icon"></i>
+                                <p>Gemstone</p>
+                                </a>
+                            </li>
+
+                            {{--  MATERIAL  --}}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="fas fa-coins nav-icon"></i>
+                                <p>Material</p>
+                                </a>
+                            </li>
+
+                            {{--  ITEM  --}}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-ring nav-icon"></i>
+                                    <p>Item</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    {{--  MANAGEMENT  --}}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-cog"></i>
+                            <p>
+                                Management
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                    </li>
+
+                    {{--  ACCOUNTS  --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+
+                        <p>Account</p>
+                        </a>
+                    </li>
+
+                    {{--  LOGS  --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-archive"></i>
+                            <p>
+                                Logs
+                            </p>
+                        </a>
+                    </li>
+
+                    {{--  LOGOUT  --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-power-off"></i>
+                            <p>
+                                Logout
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>   {{--  /.sidebar-menu  --}}
+        </div>  {{--  /.sidebar  --}}
   </aside>
 
     {{--  Content Wrapper. Contains page content  --}}
     <div class="content-wrapper">
-        {{--  Content Header (Page header)  --}}
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Starter Page</h1>
-                    </div>
-                    {{--  /.col  --}}
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Starter Page</li>
-                        </ol>
-                    </div>  {{--  /.col   --}}
-            </div>  {{--  /.row  --}}
-        </div>  {{--  /.container-fluid  --}}
-    </div> {{--  /.content-header  --}}
-    
 
-    {{--  Main content  --}}
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
+    </div>  {{--  /.content-wrapper  --}}
 
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
+
+
+        {{--   Main Footer  --}}
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+            Anything you want
             </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+</div> {{--  END OF MAIN DIV WRAPPER  --}}
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-            {{--   /.card   --}}
-          </div>
-          {{--  /.col-md-6  --}}
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          {{--  /.col-md-6  --}}
-        </div>
-        {{--  /.row  --}}
-      </div>
-      {{--  /.container-fluid  --}}
-    </div>
-    {{--  /.content  --}}
-  </div>
-  {{--  /.content-wrapper  --}}
-
-  {{--  Control Sidebar  --}}
-  <aside class="control-sidebar control-sidebar-dark">
-    {{--  Control sidebar content goes here  --}}
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-{{--  /.control-sidebar    --}}
-
-  {{--   Main Footer  --}}
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-</div>
-{{--  ./wrapper  --}}
 
 {{--   REQUIRED SCRIPTS  --}}
 
